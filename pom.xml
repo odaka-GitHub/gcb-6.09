@@ -8,6 +8,7 @@
     <artifactId>gcb-6.09</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <!--子项目模块-->
     <modules>
         <module>eureka-server</module>
         <module>vip-server</module>
