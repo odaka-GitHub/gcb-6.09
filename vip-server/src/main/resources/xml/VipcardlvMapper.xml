@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gcb.exam.mapper.VipcardlvMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gcb.exam.entity.Vipcardlv">
+        <id column="id" property="id" />
+        <result column="vipLvName" property="vipLvName" />
+        <result column="vipLvType" property="vipLvType" />
+        <result column="vipLvCreateTime" property="vipLvCreateTime" />
+        <result column="vipLvCreatePeople" property="vipLvCreatePeople" />
+        <result column="editvipLvTime" property="editvipLvTime" />
+        <result column="editvipLvPeople" property="editvipLvPeople" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, vipLvName, vipLvType, vipLvCreateTime, vipLvCreatePeople, editvipLvTime, editvipLvPeople
+    </sql>
+
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gcb.exam.mapper.VipcardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gcb.exam.entity.Vipcard">
+        <id column="id" property="id"/>
+        <result column="vipcardName" property="vipcardName"/>
+        <result column="vipcardLv" property="vipcardLv"/>
+        <result column="vipcardcolor" property="vipcardcolor"/>
+        <result column="vipcardType" property="vipcardType"/>
+        <result column="vipcardCreatime" property="vipcardCreatime"/>
+        <result column="vipcardCreatPeople" property="vipcardCreatPeople"/>
+        <result column="editTime" property="editTime"/>
+        <result column="editPeople" property="editPeople"/>
+        <result column="uid" property="uid"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <resultMap id="voMap" type="com.gcb.exam.entity.Vipcard" extends="BaseResultMap">
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, vipcardName, vipcardLv, vipcardColor, vipcardType, vipcardCreatime, vipcardCreatPeople, editTime, editPeople, uid
+    </sql>
+
+    <select id="list" resultMap="voMap">
+        select t_vipcard.* , t_vipuser.name from t_vipcard , t_vipuser where t_vipcard.uid = t_vipuser.id
+    </select>
+
+    <select id="findVipUser" resultMap="voMap">
+select * from t_vipcard , t_vipuser where t_vipcard.uid= t_vipuser.id and t_vipcard.uid=#{uid}
+    </select>
+
+</mapper>
